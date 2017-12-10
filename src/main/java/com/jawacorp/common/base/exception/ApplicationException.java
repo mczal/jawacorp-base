@@ -9,50 +9,36 @@ public class ApplicationException extends Exception {
 
   private static final long serialVersionUID = 5651924131738244357L;
 
-  private ErrorCategory errorCode;
+  private HttpCode code;
 
-  private String errorMessage;
+  private String message;
 
-  public ApplicationException() {
-    super(ErrorCategory.UNSPECIFIED.getMessage());
-    this.errorCode = ErrorCategory.UNSPECIFIED;
-    this.errorMessage = ErrorCategory.UNSPECIFIED.getMessage();
+  public ApplicationException(HttpCode code) {
+    super(code.message());
+    this.message = code.message();
+    this.code = code;
   }
 
-  public ApplicationException(ErrorCategory errorCode) {
-    super(errorCode.getMessage());
-    this.errorMessage = errorCode.getMessage();
-    this.errorCode = errorCode;
+  public ApplicationException(HttpCode code, String message) {
+    super(code.message());
+    this.message = message;
+    this.code = code;
   }
 
-  public ApplicationException(ErrorCategory errorCode, String errorMessage) {
-    super(errorCode.getMessage());
-    this.errorMessage = errorMessage;
-    this.errorCode = errorCode;
-  }
-
-  public ApplicationException(ErrorCategory errorCategory, BindingResult bindingResult) {
+  public ApplicationException(HttpCode code, BindingResult bindingResult) {
     super(bindingResult.getFieldError().getField() + " [" + bindingResult.getFieldError().
         getDefaultMessage() + "]");
-    this.errorCode = errorCategory;
-    this.errorMessage =
+    this.code = code;
+    this.message =
         bindingResult.getFieldError().getField() + " [" + bindingResult.getFieldError().
             getDefaultMessage() + "]";
   }
 
-  public ErrorCategory getErrorCode() {
-    return errorCode;
+  public HttpCode getErrorCode() {
+    return code;
   }
 
-  public void setErrorCode(ErrorCategory errorCodes) {
-    this.errorCode = errorCodes;
-  }
-
-  public String getErrorMessage() {
-    return errorMessage;
-  }
-
-  public void setErrorMessage(String errorMessage) {
-    this.errorMessage = errorMessage;
+  public void setErrorCode(HttpCode code) {
+    this.code = code;
   }
 }

@@ -1,4 +1,4 @@
-package com.jawacorp.common.base.rest.error;
+package com.jawacorp.common.base.exception;
 
 /**
  * Created by mczal on 29-Jan-17.

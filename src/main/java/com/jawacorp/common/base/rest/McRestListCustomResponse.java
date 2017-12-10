@@ -1,6 +1,6 @@
 package com.jawacorp.common.base.rest;
 
-import com.jawacorp.common.base.rest.error.HttpCode;
+import com.jawacorp.common.base.exception.HttpCode;
 
 import java.util.List;
 

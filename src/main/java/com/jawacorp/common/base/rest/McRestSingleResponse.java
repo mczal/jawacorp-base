@@ -1,7 +1,7 @@
 package com.jawacorp.common.base.rest;
 
 import com.jawacorp.common.base.McBaseResponse;
-import com.jawacorp.common.base.rest.error.HttpCode;
+import com.jawacorp.common.base.exception.HttpCode;
 
 /**
  * Created by mczal on 29-Jan-17.

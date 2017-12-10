@@ -1,6 +1,6 @@
 package com.jawacorp.common.base.rest;
 
-import com.jawacorp.common.base.rest.error.HttpCode;
+import com.jawacorp.common.base.exception.HttpCode;
 
 /**
  * Created by Gl552 on 3/25/2017.

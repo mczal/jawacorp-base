@@ -1,5 +1,6 @@
-package com.jawacorp.common.base.rest.error;
+package com.jawacorp.common.base.exception.rest;
 
+import com.jawacorp.common.base.exception.HttpCode;
 import org.springframework.validation.BindingResult;
 
 /**
